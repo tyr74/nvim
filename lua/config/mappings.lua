@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Git status' })
 vim.keymap.set('n', '<leader>ts', builtin.treesitter, { desc = 'Lists funcs & vars via TS' })
 
 -- Neotree Bindings
-vim.keymap.set('n', '<leader>fs', ':Neotree filesystem reveal left<CR>')
+vim.keymap.set('n', '<leader>fs', ':Neotree filesystem toggle reveal left<CR>')
 
 
 -- General Vim Bindings
