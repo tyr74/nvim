@@ -1,4 +1,4 @@
--- Harpoon Bindings
+-- Harpoon bindings
 local harpoon = require('harpoon')
 
 vim.keymap.set('n', '<leader>ha', function() harpoon:list():add() end)
@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>ht', function() harpoon:list():select(4) end)
 vim.keymap.set('n', '<leader>hp', function() harpoon:list():prev() end)
 vim.keymap.set('n', '<leader>hn', function() harpoon:list():next() end)
 
--- Telescope Bindings
+-- Telescope bindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>pg', builtin.live_grep, { desc = 'Telescope live grep' })
@@ -27,19 +27,27 @@ vim.keymap.set('n', '<leader>lr', builtin.lsp_references, { desc = 'Lists refere
 vim.keymap.set('n', '<leader>li', builtin.lsp_implementations, { desc = 'Lists implementations for word under cursor' })
 vim.keymap.set('n', '<leader>ld', builtin.lsp_definitions, { desc = 'Lists definitions for word under cursor' })
 vim.keymap.set('n', '<leader>lt', builtin.lsp_type_definitions, { desc = 'Lists type definitions for word under cursor' })
-vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Git files' })
-vim.keymap.set('n', '<leader>gl', builtin.git_commits, { desc = 'Git commits' })
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Git branches' })
-vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Git status' })
+--vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Git files' })
+--vim.keymap.set('n', '<leader>gl', builtin.git_commits, { desc = 'Git commits' })
+--vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Git branches' })
+--vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Git status' })
 vim.keymap.set('n', '<leader>ts', builtin.treesitter, { desc = 'Lists funcs & vars via TS' })
 
--- Neotree Bindings
+-- Neotree bindings
 vim.keymap.set('n', '<leader>fs', function() vim.api.nvim_exec('Neotree filesystem toggle reveal left', true) end)
 
 -- Undotree bindings
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
--- General Vim Bindings
+-- Fugitive bindings
+vim.keymap.set('n', '<leader>gs', ':Git<CR>')
+vim.keymap.set('n', '<leader>gb', ':Git branch<CR>')
+vim.keymap.set('n', '<leader>ga', ':Git add .<CR>')
+vim.keymap.set('n', '<leader>gc', ':Git commit<CR>')
+vim.keymap.set('n', '<leader>gb', ':Git branch')
+vim.keymap.set('n', '<leader>gp', ':Git push')
+
+-- General Vim bindings
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>st', '<C-w><C-w>')
 vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv")
