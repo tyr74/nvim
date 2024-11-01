@@ -41,11 +41,11 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- Fugitive bindings
 vim.keymap.set('n', '<leader>gs', ':Git<CR>')
-vim.keymap.set('n', '<leader>gb', ':Git branch<CR>')
 vim.keymap.set('n', '<leader>ga', ':Git add .<CR>')
 vim.keymap.set('n', '<leader>gc', ':Git commit<CR>')
-vim.keymap.set('n', '<leader>gb', ':Git branch')
-vim.keymap.set('n', '<leader>gp', ':Git push')
+vim.keymap.set('n', '<leader>gb', ':Git branch<CR>')
+vim.keymap.set('n', '<leader>gp', ':Git push<CR>')
+vim.keymap.set('n', '<leader>gd', ':Git diff<CR>')
 
 -- General Vim bindings
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
