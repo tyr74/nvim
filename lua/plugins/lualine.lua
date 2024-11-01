@@ -6,13 +6,17 @@ return {
       options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        -- Arrow-like separators
+        -- component_separators = { left = '', right = ''},
+        -- section_separators = { left = '', right = ''},
+        -- No separators
+        component_separators = { '' },
+        section_separators = { '' },
         disabled_filetypes = {
           statusline = {},
           winbar = {},
         },
-        ignore_focus = {},
+        ignore_focus = {'neo-tree'},
         always_divide_middle = true,
         globalstatus = false,
         refresh = {
@@ -40,7 +44,7 @@ return {
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {}
+      extensions = {'neo-tree'}
     }
   end
 }
