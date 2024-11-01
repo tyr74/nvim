@@ -6,6 +6,7 @@ return {
       options = {
         icons_enabled = true,
         theme = 'auto',
+        --theme = 'dracula', -- low level learning theme
         -- Arrow-like separators
         -- component_separators = { left = '', right = ''},
         -- section_separators = { left = '', right = ''},

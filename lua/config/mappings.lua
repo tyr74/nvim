@@ -39,6 +39,13 @@ vim.keymap.set('n', '<leader>fs', function() vim.api.nvim_exec('Neotree filesyst
 -- Undotree bindings
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
+-- Debug bindings
+dap = dap
+vim.keymap.set('n', '<leader>bp', function() dap.toggle_breakpoint() end)
+vim.keymap.set('n', '<leader>db', function() dap.continue() end)
+vim.keymap.set('n', '<leader>so', function() dap.step_over() end)
+vim.keymap.set('n', '<leader>si', function() dap.step_into() end)
+
 -- Fugitive bindings
 vim.keymap.set('n', '<leader>gs', ':Git<CR>')
 vim.keymap.set('n', '<leader>ga', ':Git add .<CR>')
@@ -48,6 +55,7 @@ vim.keymap.set('n', '<leader>gp', ':Git push<CR>')
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>')
 
 -- General Vim bindings
+vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>st', '<C-w><C-w>')
 vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv")
