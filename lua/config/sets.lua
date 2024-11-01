@@ -21,6 +21,8 @@ vim.g.splitvertical = false
 
 vim.o.swapfile = false
 vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
 
 vim.o.hlsearch = false
 vim.o.incsearch = true
