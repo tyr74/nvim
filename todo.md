@@ -1,7 +1,4 @@
-finish configuring refactor\
-TSPlayground\
-TSRainbow\
-todo comments\
+do the lsp stuff on god\
 look for more plugins\
 continue to watch video series\
 add stuff to lualine once i have lsp setup\
@@ -10,3 +7,4 @@ look into trouble?\
 \
 add advanced git keybinds like mergetool and difftool\
 setup debug adapters for dap\
+add refactoring if I want\
