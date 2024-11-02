@@ -36,6 +36,9 @@ vim.keymap.set('n', '<leader>ts', builtin.treesitter, { desc = 'Lists funcs & va
 -- Neotree bindings
 vim.keymap.set('n', '<leader>fs', function() vim.api.nvim_exec('Neotree filesystem toggle reveal left', true) end)
 
+-- LSP bindings
+vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action)
+
 -- Undotree bindings
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 

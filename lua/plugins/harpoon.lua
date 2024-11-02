@@ -6,7 +6,7 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   opts = function()
-    harpoon = require('harpoon')
+    local harpoon = require('harpoon')
     harpoon:setup()
   end,
 }

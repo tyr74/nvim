@@ -1,7 +1,6 @@
 return {
   {
     "williamboman/mason.nvim",
-    --'neovim/nvim-lspconfig',
     config = function()
       require('mason').setup()
     end,
@@ -25,5 +24,23 @@ return {
         },
       })
     end,
-  }
+  },
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lspconfig = require('lspconfig')
+
+      lspconfig.pyright.setup {}
+      lspconfig.pylyzer.setup {}
+      lspconfig.rust_analyzer.setup {}
+      lspconfig.asm_lsp.setup {}
+      lspconfig.clangd.setup {}
+      lspconfig.harper_ls.setup {}
+      lspconfig.lua_ls.setup {}
+      lspconfig.marksman.setup {}
+      lspconfig.matlab_ls.setup {}
+      lspconfig.gopls.setup {}
+      lspconfig.zls.setup {}
+    end,
+  },
 }
