@@ -110,6 +110,15 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+vim.keymap.set("n", "j", [[v:count > 1 ? "m'" . v:count . 'j' : 'gj']], {
+	expr = true,
+})
+vim.keymap.set("n", "k", [[v:count > 1 ? "m'" . v:count . 'k' : 'gk']], {
+	expr = true,
+})
+vim.keymap.set("n", "gj", "<Down>")
+vim.keymap.set("n", "gk", "<Up>")
+
 -- Telescope integration with harpoon
 -- basic telescope configuration
 local conf = require("telescope.config").values

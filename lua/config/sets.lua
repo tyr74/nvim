@@ -15,7 +15,6 @@ vim.o.softtabstop = 2
 -- set shiftwidth=2
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
-vim.o.wrap = false
 -- vertical split by default?
 vim.g.splitvertical = false
 
