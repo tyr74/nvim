@@ -41,6 +41,11 @@ return {
 			lspconfig.matlab_ls.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.zls.setup({})
+      lspconfig.jdtls.setup({})
 		end,
 	},
+
+  {
+    'mfussenegger/nvim-jdtls',
+  },
 }
