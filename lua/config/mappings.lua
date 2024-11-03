@@ -48,10 +48,6 @@ vim.keymap.set(
 	builtin.lsp_type_definitions,
 	{ desc = "Lists type definitions for word under cursor" }
 )
---vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Git files' })
---vim.keymap.set('n', '<leader>gl', builtin.git_commits, { desc = 'Git commits' })
---vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Git branches' })
---vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Git status' })
 vim.keymap.set("n", "<leader>ts", builtin.treesitter, { desc = "Lists funcs & vars via TS" })
 
 -- Neotree bindings
@@ -59,7 +55,7 @@ vim.keymap.set("n", "<leader>fs", function()
 	vim.api.nvim_exec("Neotree filesystem toggle reveal left", true)
 end)
 
--- Temporary Mason Keybind
+-- Temporary Mason binding
 vim.keymap.set("n", "<leader>m", ":Mason<CR>")
 
 -- LSP/Null-ls bindings
@@ -70,19 +66,20 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Debug bindings
-dap = dap
-vim.keymap.set("n", "<leader>bp", function()
-	dap.toggle_breakpoint()
-end)
-vim.keymap.set("n", "<leader>db", function()
-	dap.continue()
-end)
-vim.keymap.set("n", "<leader>so", function()
-	dap.step_over()
-end)
-vim.keymap.set("n", "<leader>si", function()
-	dap.step_into()
-end)
+local dap = require("dap")
+local widgets = require("dap.ui.widgets")
+vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>B", dap.set_breakpoint)
+vim.keymap.set("n", "<leader>dc", dap.continue)
+vim.keymap.set("n", "<leader>c", dap.step_over)
+vim.keymap.set("n", "<leader>i", dap.step_into)
+vim.keymap.set("n", "<leader>o", dap.step_out)
+vim.keymap.set("n", "<Leader>dr", dap.repl.open)
+vim.keymap.set("n", "<Leader>dl", dap.run_last)
+vim.keymap.set({ "n", "v" }, "<Leader>dh", widgets.hover)
+vim.keymap.set({ "n", "v" }, "<Leader>dp", widgets.preview)
+-- vim.keymap.set("n", "<Leader>df", widgets.centered_float(widgets.frames))
+-- vim.keymap.set("n", "<Leader>ds", widgets.centered_float(widgets.scopes))
 
 -- Fugitive bindings
 vim.keymap.set("n", "<leader>gs", ":Git<CR>")

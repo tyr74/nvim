@@ -21,7 +21,6 @@ return {
           extra_args = { '-c', '/google_checks.xml' },
         }),
         null_ls.builtins.diagnostics.codespell,
-        null_ls.builtins.diagnostics.cppcheck,
         null_ls.builtins.diagnostics.mlint,
         null_ls.builtins.diagnostics.todo_comments,
         null_ls.builtins.formatting.codespell,
