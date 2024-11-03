@@ -7,45 +7,60 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"asm_lsp",
-					"clangd",
-					"harper_ls",
-					"gopls",
-					"marksman",
-					"matlab_ls",
-					"pylyzer",
-					"rust_analyzer",
-					"zls",
-				},
-			})
-		end,
+		lazy = false,
+		opts = {
+			auto_install = true,
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.pylyzer.setup({})
-			lspconfig.ruff.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.bacon_ls.setup({})
-			lspconfig.asm_lsp.setup({})
-			lspconfig.clangd.setup({})
-			lspconfig.harper_ls.setup({})
-			lspconfig.lua_ls.setup({})
-			lspconfig.marksman.setup({})
-			lspconfig.matlab_ls.setup({})
-			lspconfig.gopls.setup({})
-			lspconfig.zls.setup({})
-      lspconfig.jdtls.setup({})
+			lspconfig.pylyzer.setup({
+        capabilities = capabilities,
+			})
+			lspconfig.ruff.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.bacon_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.asm_lsp.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.harper_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.marksman.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.matlab_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.zls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.jdtls.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 
-  {
-    'mfussenegger/nvim-jdtls',
-  },
+	{
+		"mfussenegger/nvim-jdtls",
+	},
 }
