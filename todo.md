@@ -1,7 +1,6 @@
-finish watching lsp video\
-think about lsp stuff i guess\
-do the lsp stuff on god\
-look into formatters and linters\
+make sure that the linters and formatters operate correctly\
+i think im good on actually chosing the linters and formatters tho\
+setup debug/dap\
 look for more plugins\
 continue to watch video series\
 add stuff to lualine once i have lsp setup\
