@@ -105,6 +105,7 @@ vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", { desc = "Git diff" })
 
 -- General Vim bindings
+vim.keymap.set("n", "<leader>np", ":NoNeckPain<CR>", { desc = "Toggle NoNeckPain" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Show filesystem with vim" })
 vim.keymap.set("n", "<leader>st", "<C-w><C-w>", { desc = "Switch windows" })
