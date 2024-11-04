@@ -71,6 +71,13 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current b
 -- Undotree bindings
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree" })
 
+-- Moveline bindings
+local moveline = require('moveline')
+vim.keymap.set('n', '<M-k>', moveline.up, { desc = "Move current line up" })
+vim.keymap.set('n', '<M-j>', moveline.down, { desc = "Move current line down" })
+vim.keymap.set('v', '<M-k>', moveline.block_up, { desc = "Move current selection up" })
+vim.keymap.set('v', '<M-j>', moveline.block_down, { desc = "Move current selection down" })
+
 -- Debug bindings
 local dap = require("dap")
 local widgets = require("dap.ui.widgets")
@@ -101,8 +108,6 @@ vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", { desc = "Git diff" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Show filesystem with vim" })
 vim.keymap.set("n", "<leader>st", "<C-w><C-w>", { desc = "Switch windows" })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted block down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted block up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Attach next line to end of current" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Down half page" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Up half page" })

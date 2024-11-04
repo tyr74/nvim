@@ -19,4 +19,9 @@ return {
 			})
 		end,
 	},
+
+	{
+		"willothy/moveline.nvim",
+		build = "make",
+	},
 }
