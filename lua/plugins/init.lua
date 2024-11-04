@@ -1,9 +1,13 @@
 return {
   {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
   },
 
   {
-    "mbbill/undotree"
+    "mbbill/undotree",
+  },
+
+  {
+    "tpope/vim-commentary",
   },
 }
