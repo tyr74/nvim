@@ -2,28 +2,28 @@
 local harpoon = require("harpoon")
 
 vim.keymap.set("n", "<leader>ha", function()
-	harpoon:list():add()
+  harpoon:list():add()
 end)
 vim.keymap.set("n", "<leader>hs", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
+  harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 vim.keymap.set("n", "<leader>hw", function()
-	harpoon:list():select(1)
+  harpoon:list():select(1)
 end)
 vim.keymap.set("n", "<leader>he", function()
-	harpoon:list():select(2)
+  harpoon:list():select(2)
 end)
 vim.keymap.set("n", "<leader>hr", function()
-	harpoon:list():select(3)
+  harpoon:list():select(3)
 end)
 vim.keymap.set("n", "<leader>ht", function()
-	harpoon:list():select(4)
+  harpoon:list():select(4)
 end)
 vim.keymap.set("n", "<leader>hp", function()
-	harpoon:list():prev()
+  harpoon:list():prev()
 end)
 vim.keymap.set("n", "<leader>hn", function()
-	harpoon:list():next()
+  harpoon:list():next()
 end)
 
 -- Telescope bindings
@@ -43,16 +43,17 @@ vim.keymap.set("n", "<leader>lr", builtin.lsp_references, { desc = "Lists refere
 vim.keymap.set("n", "<leader>li", builtin.lsp_implementations, { desc = "Lists implementations for word under cursor" })
 vim.keymap.set("n", "<leader>ld", builtin.lsp_definitions, { desc = "Lists definitions for word under cursor" })
 vim.keymap.set(
-	"n",
-	"<leader>lt",
-	builtin.lsp_type_definitions,
-	{ desc = "Lists type definitions for word under cursor" }
+  "n",
+  "<leader>lt",
+  builtin.lsp_type_definitions,
+  { desc = "Lists type definitions for word under cursor" }
 )
+vim.keymap.set("n", "<leader>le", builtin.diagnostics, { desc = "Lists diagnostics" })
 vim.keymap.set("n", "<leader>ts", builtin.treesitter, { desc = "Lists funcs & vars via TS" })
 
 -- Neotree bindings
 vim.keymap.set("n", "<leader>fs", function()
-	vim.api.nvim_exec("Neotree filesystem toggle reveal left", true)
+  vim.api.nvim_exec("Neotree filesystem toggle reveal left", true)
 end)
 
 -- Temporary Mason binding
@@ -109,37 +110,46 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set('n', '<leader>qf', '<cmd>copen<cr>', {
+  desc = 'Open quickfix list',
+})
+vim.keymap.set('n', '<leader>qc', '<cmd>cclose<cr>', {
+  desc = 'Exit quickfix list',
+})
 
 vim.keymap.set("n", "j", [[v:count > 1 ? "m'" . v:count . 'j' : 'gj']], {
-	expr = true,
+  expr = true,
 })
 vim.keymap.set("n", "k", [[v:count > 1 ? "m'" . v:count . 'k' : 'gk']], {
-	expr = true,
+  expr = true,
 })
 vim.keymap.set("n", "gj", "<Down>")
 vim.keymap.set("n", "gk", "<Up>")
+
+vim.keymap.set("n", "c", '"_c')
+vim.keymap.set("n", "C", '"_C')
 
 -- Telescope integration with harpoon
 -- basic telescope configuration
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
-	local file_paths = {}
-	for _, item in ipairs(harpoon_files.items) do
-		table.insert(file_paths, item.value)
-	end
+  local file_paths = {}
+  for _, item in ipairs(harpoon_files.items) do
+    table.insert(file_paths, item.value)
+  end
 
-	require("telescope.pickers")
-		.new({}, {
-			prompt_title = "Harpoon",
-			finder = require("telescope.finders").new_table({
-				results = file_paths,
-			}),
-			previewer = conf.file_previewer({}),
-			sorter = conf.generic_sorter({}),
-		})
-		:find()
+  require("telescope.pickers")
+      .new({}, {
+        prompt_title = "Harpoon",
+        finder = require("telescope.finders").new_table({
+          results = file_paths,
+        }),
+        previewer = conf.file_previewer({}),
+        sorter = conf.generic_sorter({}),
+      })
+      :find()
 end
 
 vim.keymap.set("n", "<leader>hm", function()
-	toggle_telescope(harpoon:list())
+  toggle_telescope(harpoon:list())
 end, { desc = "Open harpoon window" })

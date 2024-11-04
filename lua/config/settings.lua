@@ -1,21 +1,16 @@
--- global leader hotkey
 vim.g.mapleader = ' '
--- local leader hotkey
 vim.g.maplocalleader = '\\'
--- relative line number
+
 vim.o.rnu = true
--- absolute line numbers
 vim.o.nu = true
--- set expandtab
+
 vim.o.expandtab = true
--- set tabstop=2
 vim.o.tabstop = 2
--- set softtabstop=2
 vim.o.softtabstop = 2
--- set shiftwidth=2
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
--- vertical split by default?
+vim.o.smarttab = true
+
 vim.g.splitvertical = false
 
 vim.o.swapfile = false
