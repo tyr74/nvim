@@ -1,6 +1,7 @@
+local wk = require("which-key")
 -- Harpoon bindings
 local harpoon = require("harpoon")
-
+wk.add({"<leader>h", group = "Harpoon"})
 vim.keymap.set("n", "<leader>ha", function()
 	harpoon:list():add()
 end)
@@ -28,6 +29,10 @@ end)
 
 -- Telescope bindings
 local builtin = require("telescope.builtin")
+wk.add({
+  {"<leader>p", group = "Telescope searches"},
+  {"<leader>l", group = "LSP"}
+})
 vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>pg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>pb", builtin.buffers, { desc = "Telescope buffers" })
@@ -60,7 +65,7 @@ end, { desc = "Open filesystem with Neotree" })
 vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "Open Mason" })
 
 -- LSP/Null-ls bindings
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "See code actions" })
+vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "See code actions" })
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
 
 -- Undotree bindings
@@ -69,6 +74,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree"
 -- Debug bindings
 local dap = require("dap")
 local widgets = require("dap.ui.widgets")
+wk.add({"<leader>d", group = "Debug"})
 vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 vim.keymap.set("n", "<leader>B", dap.set_breakpoint, { desc = "Set breakpoint" })
 vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Open debugging" })
@@ -83,6 +89,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>dp", widgets.preview, { desc = "Debugging 
 -- vim.keymap.set("n", "<Leader>ds", widgets.centered_float(widgets.scopes))
 
 -- Fugitive bindings
+wk.add({"<leader>g", group = "Git"})
 vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
 vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Git add" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git commit" })
