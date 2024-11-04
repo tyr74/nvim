@@ -1,15 +1,13 @@
-# Things I need to work on\
+# Current state
 
-<!--toc:start-->
-- [Things I need to work on\](#things-i-need-to-work-on)
-<!--toc:end-->
+Going to stop focusing on plugins, and start working on AOC\\
 
-\
+## Things I need to work on
+
 Look for more plugins\
 Make trouble work fr\
 Still confused on trouble, will keep trying later\
 \
 \
 Add advanced git keybinds like mergetool and difftool\
-Setup debug adapters for dap\
-Add refactoring if I want\\
+Add refactoring if I want

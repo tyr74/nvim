@@ -71,6 +71,9 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current b
 -- Undotree bindings
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree" })
 
+-- Glow bindings
+vim.keymap.set("n", "<leader>sm", ":Glow<CR>", { desc = "Show markdown preview" })
+
 -- Moveline bindings
 local moveline = require('moveline')
 vim.keymap.set('n', '<M-k>', moveline.up, { desc = "Move current line up" })
