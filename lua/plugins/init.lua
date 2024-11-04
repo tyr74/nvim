@@ -1,13 +1,22 @@
 return {
-  {
-    "nvim-tree/nvim-web-devicons",
-  },
+	{
+		"nvim-tree/nvim-web-devicons",
+	},
 
-  {
-    "mbbill/undotree",
-  },
+	{
+		"mbbill/undotree",
+	},
 
-  {
-    "tpope/vim-commentary",
-  },
+	{
+		"tpope/vim-commentary",
+	},
+
+	{
+		"Wansmer/sibling-swap.nvim",
+		requires = { "nvim-treesitter" },
+		config = function()
+			require("sibling-swap").setup({ --[[ your config ]]
+			})
+		end,
+	},
 }
