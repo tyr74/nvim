@@ -26,10 +26,10 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			}))
-			lspconfig.hls.setup({
+			lspconfig.hls.setup(coq.lsp_ensure_capabilities({
 				capabilities = capabilities,
 				on_attach = on_attach,
-			})
+			}))
 			lspconfig.ruff.setup(coq.lsp_ensure_capabilities({
 				capabilities = capabilities,
 				on_attach = on_attach,
