@@ -11,8 +11,7 @@ vim.o.shiftwidth = 2
 vim.o.smartindent = true
 vim.o.smarttab = true
 
-vim.g.splitvertical = true
-vim.g.splitright = true
+vim.o.splitright = true
 
 vim.o.swapfile = false
 vim.o.backup = false

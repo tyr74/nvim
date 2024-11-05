@@ -26,6 +26,8 @@ return {
         null_ls.builtins.formatting.codespell,
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.asmfmt,
+        -- null_ls.builtins.formatting.rustfmt,
+        require('none-ls.formatting.rustfmt'),
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.mdformat,
         null_ls.builtins.formatting.google_java_format,
