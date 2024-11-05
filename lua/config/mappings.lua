@@ -143,6 +143,7 @@ vim.keymap.set("n", "gk", "<Up>")
 
 vim.keymap.set("n", "c", '"_c')
 vim.keymap.set("n", "C", '"_C')
+vim.keymap.set("n", "<leader>to", ":ToggleTerm<CR>", { desc = "Open a terminal in a split window" })
 
 -- Telescope integration with harpoon
 -- basic telescope configuration

@@ -40,4 +40,13 @@ return {
 		config = true,
 		cmd = "Glow",
 	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			size = 50,
+			direction = "vertical",
+		},
+	},
 }
