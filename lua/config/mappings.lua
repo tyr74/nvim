@@ -1,7 +1,7 @@
 local wk = require("which-key")
 -- Harpoon bindings
 local harpoon = require("harpoon")
-wk.add({"<leader>h", group = "Harpoon"})
+wk.add({ "<leader>h", group = "Harpoon" })
 vim.keymap.set("n", "<leader>ha", function()
 	harpoon:list():add()
 end)
@@ -30,8 +30,8 @@ end)
 -- Telescope bindings
 local builtin = require("telescope.builtin")
 wk.add({
-  {"<leader>p", group = "Telescope searches"},
-  {"<leader>l", group = "LSP"}
+	{ "<leader>p", group = "Telescope searches" },
+	{ "<leader>l", group = "LSP" },
 })
 vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>pg", builtin.live_grep, { desc = "Telescope live grep" })
@@ -64,9 +64,9 @@ end, { desc = "Open filesystem with Neotree" })
 -- Temporary Mason binding
 vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "Open Mason" })
 
--- LSP/Null-ls bindings
+-- LSP/Conform bindings
 vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "See code actions" })
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format current buffer" })
+vim.keymap.set("n", "<leader>lf", require("conform").format, { desc = "Format current buffer" })
 
 -- Undotree bindings
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree" })
@@ -75,16 +75,16 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree"
 vim.keymap.set("n", "<leader>sm", ":Glow<CR>", { desc = "Show markdown preview" })
 
 -- Moveline bindings
-local moveline = require('moveline')
-vim.keymap.set('n', '<M-k>', moveline.up, { desc = "Move current line up" })
-vim.keymap.set('n', '<M-j>', moveline.down, { desc = "Move current line down" })
-vim.keymap.set('v', '<M-k>', moveline.block_up, { desc = "Move current selection up" })
-vim.keymap.set('v', '<M-j>', moveline.block_down, { desc = "Move current selection down" })
+local moveline = require("moveline")
+vim.keymap.set("n", "<M-k>", moveline.up, { desc = "Move current line up" })
+vim.keymap.set("n", "<M-j>", moveline.down, { desc = "Move current line down" })
+vim.keymap.set("v", "<M-k>", moveline.block_up, { desc = "Move current selection up" })
+vim.keymap.set("v", "<M-j>", moveline.block_down, { desc = "Move current selection down" })
 
 -- Debug bindings
 local dap = require("dap")
 local widgets = require("dap.ui.widgets")
-wk.add({"<leader>d", group = "Debug"})
+wk.add({ "<leader>d", group = "Debug" })
 vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 vim.keymap.set("n", "<leader>B", dap.set_breakpoint, { desc = "Set breakpoint" })
 vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Open debugging" })
@@ -99,7 +99,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>dp", widgets.preview, { desc = "Debugging 
 -- vim.keymap.set("n", "<Leader>ds", widgets.centered_float(widgets.scopes))
 
 -- Fugitive bindings
-wk.add({"<leader>g", group = "Git"})
+wk.add({ "<leader>g", group = "Git" })
 vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "Git status" })
 vim.keymap.set("n", "<leader>ga", ":Git add .<CR>", { desc = "Git add" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "Git commit" })
@@ -108,17 +108,17 @@ vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gd", ":Git diff<CR>", { desc = "Git diff" })
 
 -- General Vim bindings
-local neoscroll = require('neoscroll')
+local neoscroll = require("neoscroll")
 vim.keymap.set("n", "<leader>np", ":NoNeckPain<CR>", { desc = "Toggle NoNeckPain" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Show filesystem with vim" })
 vim.keymap.set("n", "<leader>st", "<C-w><C-w>", { desc = "Switch windows" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Attach next line to end of current" })
-vim.keymap.set({"n", "x", "v"}, "<C-d>", function() 
-  neoscroll.ctrl_d({ duration = 250; easing = 'linear' }) 
-end, { desc = "Down half page" }) 
-vim.keymap.set({"n", "x", "v"}, "<C-u>", function()
-  neoscroll.ctrl_u({ duration = 250; easing = 'linear' })
+vim.keymap.set({ "n", "x", "v" }, "<C-d>", function()
+	neoscroll.ctrl_d({ duration = 250, easing = "linear" })
+end, { desc = "Down half page" })
+vim.keymap.set({ "n", "x", "v" }, "<C-u>", function()
+	neoscroll.ctrl_u({ duration = 250, easing = "linear" })
 end, { desc = "Up half page" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next occurrence" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous occurrence" })

@@ -33,22 +33,6 @@ return {
 				require("cmp_nvim_lsp").default_capabilities()
 			)
 
-			local buffer_autoformat = function(bufnr)
-				local group = "lsp_autoformat"
-				vim.api.nvim_create_augroup(group, { clear = false })
-				vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
-
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					group = group,
-					desc = "LSP format on save",
-					callback = function()
-						-- note: do not enable async formatting
-						vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-					end,
-				})
-			end
-
 			-- This is where you enable features that only work
 			-- if there is a language server active in the file
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -58,11 +42,6 @@ return {
 					local client = id and vim.lsp.get_client_by_id(id)
 					if client == nil then
 						return
-					end
-
-					-- make sure there is at least one client with formatting capabilities
-					if client.supports_method("textDocument/formatting") then
-						buffer_autoformat(event.buf)
 					end
 
 					local opts = { buffer = event.buf }
@@ -75,7 +54,6 @@ return {
 					vim.keymap.set("n", "lr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 					vim.keymap.set("n", "ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 					vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-					vim.keymap.set({ "n", "x" }, "lf", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 					vim.keymap.set("n", "la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 				end,
 			})
@@ -86,7 +64,7 @@ return {
 					"pylyzer",
 					-- "hls",
 					"ruff",
-					"rust-analyzer",
+					"rust_analyzer",
 					-- "bacon_ls",
 					"asm_lsp",
 					"clangd",
