@@ -55,6 +55,13 @@ return {
 					vim.keymap.set("n", "<localleader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 					vim.keymap.set("n", "<localleader><F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 					vim.keymap.set("n", "<localleader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+					vim.keymap.set("n", "<leader>lh", function()
+						if vim.lsp.inlay_hint then
+							vim.lsp.inlay_hint.enable(false, { 0 })
+						else
+							vim.lsp.inlay_hint.enable(true, { 0 })
+						end
+					end, { desc = "Toggle inlay hints" })
 				end,
 			})
 
