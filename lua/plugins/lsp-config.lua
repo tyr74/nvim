@@ -68,7 +68,7 @@ return {
 					-- "bacon_ls",
 					"asm_lsp",
 					"clangd",
-					"harper_ls",
+					-- "harper_ls",
 					"lua_ls",
 					"marksman",
 					"matlab_ls",
