@@ -46,15 +46,15 @@ return {
 
 					local opts = { buffer = event.buf }
 
-					vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-					vim.keymap.set("n", "ld", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-					vim.keymap.set("n", "lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-					vim.keymap.set("n", "li", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-					vim.keymap.set("n", "lo", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
-					vim.keymap.set("n", "lr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-					vim.keymap.set("n", "ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-					vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-					vim.keymap.set("n", "la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+					vim.keymap.set("n", "<localleader>K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+					vim.keymap.set("n", "<localleader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+					vim.keymap.set("n", "<localleader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+					vim.keymap.set("n", "<localleader>li", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+					vim.keymap.set("n", "<localleader>lo", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+					vim.keymap.set("n", "<localleader>lr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+					vim.keymap.set("n", "<localleader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+					vim.keymap.set("n", "<localleader><F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+					vim.keymap.set("n", "<localleader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 				end,
 			})
 
