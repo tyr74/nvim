@@ -69,7 +69,11 @@ vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Se
 vim.keymap.set("n", "<leader>lf", require("conform").format, { desc = "Format current buffer" })
 
 -- Undotree bindings
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "See Undotree" })
+vim.keymap.set("n", "<leader>u", function()
+	vim.cmd.UndotreeToggle()
+	vim.cmd("vertical resize 110")
+end, { desc = "See Undotree" })
+vim.keymap.set("n", "<localleader>u", "<cmd>Telescope undo<cr>")
 
 -- Glow bindings
 vim.keymap.set("n", "<leader>sm", ":Glow<CR>", { desc = "Show markdown preview" })
