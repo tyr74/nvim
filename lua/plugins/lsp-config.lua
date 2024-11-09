@@ -55,16 +55,13 @@ return {
 					vim.keymap.set("n", "<localleader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 					vim.keymap.set("n", "<localleader><F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 					vim.keymap.set("n", "<localleader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-					vim.keymap.set("n", "<leader>lh", function()
-						if vim.lsp.inlay_hint then
-							vim.lsp.inlay_hint.enable(false, { 0 })
-						else
-							vim.lsp.inlay_hint.enable(true, { 0 })
-						end
-					end, { desc = "Toggle inlay hints" })
+					if vim.lsp.inlay_hint then
+						vim.keymap.set("n", "<leader>lh", function(bufnr)
+							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { bufnr })
+						end, { desc = "Toggle inlay hints" })
+					end
 				end,
 			})
-
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -72,7 +69,7 @@ return {
 					-- "hls",
 					"ruff",
 					"rust_analyzer",
-					-- "bacon_ls",
+					"bacon-ls",
 					"asm_lsp",
 					"clangd",
 					-- "harper_ls",
@@ -85,11 +82,22 @@ return {
 				},
 				handlers = {
 					function(server_name)
-						require("lspconfig")[server_name].setup({})
+						require("lspconfig")[server_name].setup({
+							on_attach = function(bufnr)
+								if vim.lsp.inlay_hint then
+									vim.lsp.inlay_hint.enable(true, { bufnr })
+								end
+							end,
+						})
 					end,
 
 					rust_analyzer = function()
 						require("lspconfig").rust_analyzer.setup({
+							on_attach = function(bufnr)
+								if vim.lsp.inlay_hint then
+									vim.lsp.inlay_hint.enable(true, { bufnr })
+								end
+							end,
 							settings = {
 								["rust-analyzer"] = {
 									imports = {
@@ -105,6 +113,12 @@ return {
 									},
 									procMacro = {
 										enable = true,
+									},
+									diagnostics = {
+										enable = true,
+									},
+									formatting = {
+										enable = false,
 									},
 								},
 							},
