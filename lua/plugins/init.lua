@@ -8,10 +8,6 @@ return {
 	},
 
 	{
-		"tpope/vim-commentary",
-	},
-
-	{
 		"Wansmer/sibling-swap.nvim",
 		requires = { "nvim-treesitter" },
 		config = function()
