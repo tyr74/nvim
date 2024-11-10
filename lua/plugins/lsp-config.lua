@@ -69,7 +69,7 @@ return {
 					-- "hls",
 					"ruff",
 					"rust_analyzer",
-					-- "bacon-ls",
+					"bacon-ls",
 					"asm_lsp",
 					"clangd",
 					-- "harper_ls",
