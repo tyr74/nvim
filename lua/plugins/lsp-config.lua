@@ -120,7 +120,7 @@ return {
 									formatting = {
 										enable = false,
 									},
-									checkOnSave = {
+									check = {
 										command = "clippy",
 									},
 								},
