@@ -5,7 +5,7 @@ return {
 			makefile = { "checkmake" },
 			c = { "clangtidy", "cppcheck" },
 			cpp = { "clangtidy", "cppcheck" },
-			rust = { "clippy" },
+			rust = { "bacon", "clippy" },
 			markdown = { "markdownlint" },
 			python = { "mypy", "ruff" },
 			lua = { "selene" },
