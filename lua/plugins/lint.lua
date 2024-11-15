@@ -10,7 +10,6 @@ return {
 			python = { "mypy", "ruff" },
 			lua = { "selene" },
 			go = { "staticcheck" },
-			["*"] = { "codespell" },
 		}
 	end,
 }
