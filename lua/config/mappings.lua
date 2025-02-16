@@ -78,13 +78,6 @@ vim.keymap.set("n", "<localleader>u", "<cmd>Telescope undo<cr>")
 -- Glow bindings
 vim.keymap.set("n", "<leader>sm", ":Glow<CR>", { desc = "Show markdown preview" })
 
--- Moveline bindings
-local moveline = require("moveline")
-vim.keymap.set("n", "<M-k>", moveline.up, { desc = "Move current line up" })
-vim.keymap.set("n", "<M-j>", moveline.down, { desc = "Move current line down" })
-vim.keymap.set("v", "<M-k>", moveline.block_up, { desc = "Move current selection up" })
-vim.keymap.set("v", "<M-j>", moveline.block_down, { desc = "Move current selection down" })
-
 -- Debug bindings
 local dap = require("dap")
 local widgets = require("dap.ui.widgets")

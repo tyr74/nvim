@@ -16,10 +16,6 @@ return {
 		end,
 	},
 
-	{
-		"willothy/moveline.nvim",
-		build = "make",
-	},
 
 	{
 		"shortcuts/no-neck-pain.nvim",

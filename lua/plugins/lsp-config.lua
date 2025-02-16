@@ -7,13 +7,13 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 
-			-- Autocompletion
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
+      -- Autocompletion
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
 
 			-- Snippets
 			"L3MON4D3/LuaSnip",
@@ -70,12 +70,12 @@ return {
 					"ruff",
 					"rust_analyzer",
 					-- "bacon-ls",
-					"asm_lsp",
+					-- "asm_lsp",
 					"clangd",
 					-- "harper_ls",
 					"lua_ls",
 					"marksman",
-					"matlab_ls",
+					-- "matlab_ls",
 					"gopls",
 					"zls",
 					"jdtls",
